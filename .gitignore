@@ -1,0 +1,9 @@
+# Arquivos de configuração sensíveis (SENHAS)
+.env
+
+# Pastas de armazenamento local e logs (MUITO PESADAS)
+storage/
+
+# Arquivos temporários do sistema
+.DS_Store
+*.log

@@ -1,0 +1,45 @@
+services:
+  glpi:
+    image: glpi/glpi:latest
+    container_name: csc
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file: .env
+    environment:
+      TZ: America/Sao_Paulo
+    volumes:
+      - ./storage/glpi:/var/glpi
+    networks:
+      - proxy
+      - glpi-net
+    expose:
+      - "80"
+
+  db:
+    image: mysql:8.0
+    container_name: glpi_db
+    restart: unless-stopped
+    environment:
+      TZ: America/Sao_Paulo
+      MYSQL_DATABASE: ${GLPI_DB_NAME}
+      MYSQL_USER: ${GLPI_DB_USER}
+      MYSQL_PASSWORD: ${GLPI_DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./storage/mysql:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "--password=$$MYSQL_ROOT_PASSWORD"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    networks:
+      - glpi-net
+
+networks:
+  proxy:
+    external: true
+  glpi-net:
+    driver: bridge
