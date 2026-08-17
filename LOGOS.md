@@ -1,3 +1,7 @@
+
+## PRIMEIRO CONECTAR NA VPS
+
+
 //cópia dos arquivos para dentro do container CSC
 docker cp ./pics/. csc:/var/www/glpi/public/pics/logos/
 
