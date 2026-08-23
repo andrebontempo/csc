@@ -1,0 +1,53 @@
+{
+  "readme": "To open this file inside VSCode, you need to install Thor Client extension https://thorclient.com/",
+  "request": {
+    "url": {
+      "raw": "https://csc.bontech.com.br/api.php/v2.2/Assistance/Ticket/25/TeamMember",
+      "query": []
+    },
+    "method": "POST",
+    "header": [
+      {
+        "id": "1d7a797f-bad1-410a-a592-0fcd4fc0ff5f",
+        "key": "Authorization",
+        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiZDdjMGRkYTVlYmY3ZTZkMWRhOTcxY2U0NDBhZDM4NDEyM2U0NWYxYTAxOTI1ZWQwYjIzNTVhMjNhOTMwODdjYzlmODA0MDllYmVjNmJjN2EiLCJpYXQiOjE3ODc0NDg3MjUuMzU5MjM5LCJuYmYiOjE3ODc0NDg3MjUuMzU5MjQ0LCJleHAiOjE3ODc0NTIzMjUuMzI1NjM3LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.xgvWl8ZadTk6W_jP--PuOmqCeA438R9WngklMIGY8qd9iTBb9M3tNNXBo-OxTAIVd25QxLeM8S9KYKsz1lqKLDQoWWURRTAbH_4Jlri6-BwBqWsH6D_oWGKFCFNDnGi8t2wprK3qCFJXMtf4V5dhY2E5wDJtP8jnEKqsVXiOhQLMSmVIKR4OLhCDmZMjaNg3dxIGlIBlExDce0836au-6aGxHt9ShEEZOqfQJn6hWwDSgkerh8C7qHqqT2hnpViv4YLo5ld3divw85GjQ6tl50y0ROrAnYb2rkgNv6_4IN83u0CN93kK39eZkGRcVn3oiU6fiAf8Q-lOD-uEyAO5bw",
+        "disabled": false,
+        "type": "text"
+      },
+      {
+        "id": "eda933b3-8bc6-4fad-b583-0c5f5ccb0c95",
+        "key": "User-Agent",
+        "value": "Mozilla/5.0",
+        "disabled": false,
+        "type": "text"
+      },
+      {
+        "id": "8ff947b1-3e65-418d-8608-54a78167a62e",
+        "key": "Content-Type",
+        "value": "application/json",
+        "disabled": false,
+        "type": "text"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      },
+      "raw": "{\n  \"type\": \"User\",\n  \"id\": 7,\n  \"role\": \"requester\"\n}\n"
+    }
+  },
+  "event": {
+    "assert": [
+      {
+        "key": "response.status",
+        "value": "200",
+        "disabled": false,
+        "type": "text",
+        "operator": "=="
+      }
+    ]
+  }
+}

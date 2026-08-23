@@ -1,0 +1,126 @@
+{
+  "readme": "To open this file inside VSCode, you need to install Thor Client extension https://thorclient.com/",
+  "request": {
+    "url": {
+      "raw": "https://csc.bontech.com.br/api.php/v2.2/Assistance/Ticket",
+      "query": []
+    },
+    "header": [
+      {
+        "id": "7071ece3-9a3f-42a4-aa49-1cedbacd2f7d",
+        "key": "Authorization",
+        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiNmNjN2I2NGU1ZGRiMDc2ZTMwN2IzYTYwZDE1MzMyYzllY2UxMjZlNzRhNTFmNzAwYjk5YmRlZmYyOTQ3MDljN2FkODlmZWFmYWJhZTM1OTkiLCJpYXQiOjE3ODc0MjcwNzYuODQ3MTAzLCJuYmYiOjE3ODc0MjcwNzYuODQ3MTA3LCJleHAiOjE3ODc0MzA2NzYuODMyNTczLCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.tHKEmYgGxeeMrgUl03YBpdHtcpRX-KEx48kbXD_6focp9mpFB9LmBCEjTx7c5Ovh20DVp4Q9PrDfl-BSp7GNyZcRyhH1-qgFGWBGIIOKIWqUFJ-IanwTAFmw5gDLV54s_buhE2cc6W6gM3G180YVjh_JDMekMo_l0uJjfa2TqDXpOFR6DIgMROyor4ksB-hPCE2G8yiuiGkiGRZ-qgYyQGmC0yybCiDhTmsb3IBpBnrpuuM9m-xnwJ1K2Smo3ypsa69yPAc46Jt6H8Go_5cKbw9yV8dzsMRjqEUjC8m65S7pZ5Fn2o2ltZJmDOu37VOj4LhScfJiJa721K3VJ6hI-A",
+        "disabled": false,
+        "type": "text"
+      },
+      {
+        "id": "567d7463-6056-4ff6-a8f6-39c12aa83bfb",
+        "key": "User-Agent",
+        "value": "Mozilla/5.0",
+        "disabled": false,
+        "type": "text"
+      },
+      {
+        "id": "e116662b-d64c-4353-b9b7-1f7c28ac7d7b",
+        "key": "Content-Type",
+        "value": "application/json",
+        "disabled": false,
+        "type": "text"
+      },
+      {
+        "id": "6cbaad51-2578-4ac7-b028-1207b1d7f77a",
+        "key": "Accept",
+        "value": "application/json",
+        "disabled": false,
+        "type": "text"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      },
+      "raw": "{\n  \"name\": \"Suporte a Impressora - Thunder Client\",\n  \"content\": \"<p>Impressora do setor financeiro não está imprimindo documentos em PDF.</p>\",\n  \"urgency\": 3,\n  \"impact\": 3,\n  \"type\": 1\n}\n",
+      "urlencoded": [
+        {
+          "id": "6c072151-ee35-4b3c-958d-1f2f46f6f2d1",
+          "key": "grant_type",
+          "value": "password",
+          "disabled": false,
+          "type": "text"
+        },
+        {
+          "id": "e6599bb3-c99d-4ce2-a976-6969488f9dbf",
+          "key": "client_id",
+          "value": "75282e5eeeae51ba4c6a96601500141d94b899d8a105c6f0d7449b7b098248ae\n",
+          "disabled": false,
+          "type": "text"
+        },
+        {
+          "id": "600a826d-6b89-4369-b13d-95d9189253cd",
+          "key": "client_secret",
+          "value": "2a8d65ccf9a65f17b33ce3987ea2ec2b7a239e30959368f0cb5b0f201cb926d\n",
+          "disabled": false,
+          "type": "text"
+        },
+        {
+          "id": "edabfc68-484a-4435-b8eb-3d7d0723f421",
+          "key": "username",
+          "value": "api.chatbot\n",
+          "disabled": false,
+          "type": "text"
+        },
+        {
+          "id": "399c416a-54d1-4b5d-977e-7ce680c3677e",
+          "key": "password",
+          "value": "Aa#45678\n",
+          "disabled": false,
+          "type": "text"
+        },
+        {
+          "id": "9d2b9316-c289-4d55-b415-18bae3dc0449",
+          "key": "scope",
+          "value": "api\n",
+          "disabled": false,
+          "type": "text"
+        }
+      ]
+    },
+    "auth": {
+      "type": "noauth",
+      "basic": [
+        {
+          "key": "username",
+          "value": "api.chatbot",
+          "type": "string"
+        },
+        {
+          "key": "password",
+          "value": "Aa#45678",
+          "type": "string"
+        }
+      ],
+      "bearer": [
+        {
+          "key": "token",
+          "value": "user_token kdlh2P2bpIxQ6qeYUdxvapDq6TvsnPUwwogaQ9Je",
+          "type": "string"
+        }
+      ]
+    },
+    "method": "POST"
+  },
+  "event": {
+    "assert": [
+      {
+        "key": "response.status",
+        "value": "200",
+        "disabled": false,
+        "type": "text",
+        "operator": "=="
+      }
+    ]
+  }
+}

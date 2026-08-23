@@ -1,0 +1,23 @@
+{
+  "request": "curl --location 'https://csc.bontech.com.br/api.php/v2.2/Assistance/Ticket/20/TeamMember' \\\n--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiYTg4MDMyMGMxMmU4ODlmMmRkY2FhNGU4YzQzZDM5ZjAxNTdmOWM4MDFkMjc1YzBiZDY3NzMzNzAzZmE1YmZiMTBmNjk1MmQzNDZjYTc3MzQiLCJpYXQiOjE3ODc0NDgxMjQuMTE2OTMzLCJuYmYiOjE3ODc0NDgxMjQuMTE2OTQ4LCJleHAiOjE3ODc0NTE3MjQuMDkzNTk0LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.I_myGGkFHqbYBCv3s681ljFboxbfpYe33hOeTAYvWu5SVd1Ipl3o6y3iGbClf4QXvsdmfjV3CHvqhoZz-6lNtJVMbhMyuaM3AkSCYZvq6CGduH1oeuIKhFCLxlTWcFQtrAZ1Et1WMjEENwv4cz0xlVLDrhYKpZ4F6VR2rZyY6tGuzVWntPMbWkQV5f1ZgCUM074hh_rnaTofAd1Y3J0FFnm4UjzxZciCCIr6LHd4f8llz9Q70o-p1IXrT2vuz4KIwqxFUA8F8EsAY25YzpNg09IZCi7m29egtBgZHpngmLtUasHvpOae7bFNj5kA1OfRebrcXJhi3vYhrVzHprqcsQ' \\\n--header 'User-Agent: Mozilla/5.0' \\\n--header 'Content-Type: text/plain' \\\n--data '{\n  \"type\": \"User\",\n  \"id\": 7,\n  \"role\": \"requester\"\n}\n'",
+  "response": {
+    "status": 500,
+    "statusText": "Internal Server Error",
+    "headers": {
+      "date": "Sun, 23 Aug 2026 01:24:06 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "server": "cloudflare",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+      "cache-control": "no-store, no-cache, must-revalidate, no-cache, private",
+      "pragma": "no-cache",
+      "cf-cache-status": "DYNAMIC",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=nXbmh6%2BY4xckkIUPiaG128emcLA9uRVjte2kPMSWzIlShFZMB23se4fy6IvsvhLdqnPlNslNYOJDeTcjAlj%2BUAaA5v8mjOGiSkf9eQS0XurTHN%2BhSpVblH6SOnnsAuzpPokUswA%3D\"}]}",
+      "cf-ray": "a2f650d12baddf35-GIG",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "data": ""
+  }
+}

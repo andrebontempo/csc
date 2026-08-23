@@ -1,0 +1,24 @@
+{
+  "request": "curl --location 'https://csc.bontech.com.br/api.php/v2.2/Assistance/Ticket/23/TeamMember' \\\n--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiYTg4MDMyMGMxMmU4ODlmMmRkY2FhNGU4YzQzZDM5ZjAxNTdmOWM4MDFkMjc1YzBiZDY3NzMzNzAzZmE1YmZiMTBmNjk1MmQzNDZjYTc3MzQiLCJpYXQiOjE3ODc0NDgxMjQuMTE2OTMzLCJuYmYiOjE3ODc0NDgxMjQuMTE2OTQ4LCJleHAiOjE3ODc0NTE3MjQuMDkzNTk0LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.I_myGGkFHqbYBCv3s681ljFboxbfpYe33hOeTAYvWu5SVd1Ipl3o6y3iGbClf4QXvsdmfjV3CHvqhoZz-6lNtJVMbhMyuaM3AkSCYZvq6CGduH1oeuIKhFCLxlTWcFQtrAZ1Et1WMjEENwv4cz0xlVLDrhYKpZ4F6VR2rZyY6tGuzVWntPMbWkQV5f1ZgCUM074hh_rnaTofAd1Y3J0FFnm4UjzxZciCCIr6LHd4f8llz9Q70o-p1IXrT2vuz4KIwqxFUA8F8EsAY25YzpNg09IZCi7m29egtBgZHpngmLtUasHvpOae7bFNj5kA1OfRebrcXJhi3vYhrVzHprqcsQ ' \\\n--header 'User-Agent: Mozilla/5.0' \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"type\": \"User\",\n  \"id\": 7,\n  \"role\": \"requester\"\n}\n'",
+  "response": {
+    "status": 400,
+    "statusText": "Bad Request",
+    "headers": {
+      "date": "Sun, 23 Aug 2026 01:30:36 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "server": "cloudflare",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+      "cache-control": "no-store, no-cache, must-revalidate, no-cache, private",
+      "pragma": "no-cache",
+      "x-content-type-options": "nosniff",
+      "cf-cache-status": "DYNAMIC",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=wtQ3uL2uONK2BubU4MbKoXADfV64Ccw3qoukc2JGLF3nBUzYgLsqJWcJrGN6FBc2%2FJ01J8dY6SNcv6BvLKG4vWkHm8x%2Bk%2FIkfaPf5w5ULwzqih%2BUEjRuEJ7zWysO0QQZrT3hrDA%3D\"}]}",
+      "cf-ray": "a2f65a5af9d5da0c-GIG",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "data": "{\"status\":\"ERROR_INVALID_PARAMETER\",\"title\":\"One or more parameters are invalid\",\"detail\":null}"
+  }
+}

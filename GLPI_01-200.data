@@ -1,0 +1,27 @@
+{
+  "request": "curl --location 'https://csc.bontech.com.br/api.php/v2.2/Administration/User?filter=emails.email%3D%3Djose.uria%40email.com' \\\n--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiZDdjMGRkYTVlYmY3ZTZkMWRhOTcxY2U0NDBhZDM4NDEyM2U0NWYxYTAxOTI1ZWQwYjIzNTVhMjNhOTMwODdjYzlmODA0MDllYmVjNmJjN2EiLCJpYXQiOjE3ODc0NDg3MjUuMzU5MjM5LCJuYmYiOjE3ODc0NDg3MjUuMzU5MjQ0LCJleHAiOjE3ODc0NTIzMjUuMzI1NjM3LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.xgvWl8ZadTk6W_jP--PuOmqCeA438R9WngklMIGY8qd9iTBb9M3tNNXBo-OxTAIVd25QxLeM8S9KYKsz1lqKLDQoWWURRTAbH_4Jlri6-BwBqWsH6D_oWGKFCFNDnGi8t2wprK3qCFJXMtf4V5dhY2E5wDJtP8jnEKqsVXiOhQLMSmVIKR4OLhCDmZMjaNg3dxIGlIBlExDce0836au-6aGxHt9ShEEZOqfQJn6hWwDSgkerh8C7qHqqT2hnpViv4YLo5ld3divw85GjQ6tl50y0ROrAnYb2rkgNv6_4IN83u0CN93kK39eZkGRcVn3oiU6fiAf8Q-lOD-uEyAO5bw' \\\n--header 'User-Agent: Mozilla/5.0' \\\n--header 'Accept: application/json'",
+  "response": {
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "date": "Sun, 23 Aug 2026 01:32:35 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "server": "cloudflare",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+      "cache-control": "no-store, no-cache, must-revalidate, no-cache, private",
+      "pragma": "no-cache",
+      "content-range": "0-0/1",
+      "x-content-type-options": "nosniff",
+      "access-control-expose-headers": "Content-Type, Content-Range, Accept-Ranges",
+      "x-served-by": "csc.bontech.com.br",
+      "cf-cache-status": "DYNAMIC",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=uywXK3K9GTadH3JhEGgKWrHhrzy0Q4G2wRiNH5oZonhGl9F%2Ft%2BGOzjV869Cepai1uB3vdeZeQPZQa33umKgPBZwiaetGxyAPhYfoHed259M5Q3ewO5CZBsCfP1LeAmER1ZI3F60%3D\"}]}",
+      "cf-ray": "a2f65d389c2e06a3-GIG",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "data": "[{\"id\":7,\"username\":\"Jose.uria\",\"realname\":\"Uria\",\"firstname\":\"José\",\"phone\":\"\",\"phone2\":\"\",\"mobile\":\"\",\"comment\":\"\",\"is_active\":true,\"is_deleted\":false,\"picture\":null,\"date_password_change\":\"2026-08-22T19:51:58+00:00\",\"authtype\":1,\"last_login\":null,\"date_creation\":\"2026-08-22T19:51:58+00:00\",\"date_mod\":\"2026-08-22T19:54:57+00:00\",\"date_sync\":null,\"registration_number\":\"\",\"begin_date\":null,\"end_date\":null,\"nickname\":null,\"substitution_start_date\":null,\"substitution_end_date\":null,\"emails\":[{\"id\":1,\"email\":\"jose.uria@email.com\",\"is_default\":1,\"is_dynamic\":0}],\"location\":null,\"default_profile\":null,\"default_entity\":{\"id\":0,\"name\":\"Bontech\"},\"title\":null,\"category\":null}]"
+  }
+}

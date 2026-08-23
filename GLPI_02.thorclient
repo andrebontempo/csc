@@ -1,0 +1,53 @@
+{
+  "readme": "To open this file inside VSCode, you need to install Thor Client extension https://thorclient.com/",
+  "request": {
+    "url": {
+      "raw": "https://csc.bontech.com.br/api.php/v2.2/Assistance/Ticket",
+      "query": []
+    },
+    "method": "POST",
+    "header": [
+      {
+        "id": "95b61227-e623-41d9-b3cf-1f8355fcf21d",
+        "key": "Authorization",
+        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiZDdjMGRkYTVlYmY3ZTZkMWRhOTcxY2U0NDBhZDM4NDEyM2U0NWYxYTAxOTI1ZWQwYjIzNTVhMjNhOTMwODdjYzlmODA0MDllYmVjNmJjN2EiLCJpYXQiOjE3ODc0NDg3MjUuMzU5MjM5LCJuYmYiOjE3ODc0NDg3MjUuMzU5MjQ0LCJleHAiOjE3ODc0NTIzMjUuMzI1NjM3LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.xgvWl8ZadTk6W_jP--PuOmqCeA438R9WngklMIGY8qd9iTBb9M3tNNXBo-OxTAIVd25QxLeM8S9KYKsz1lqKLDQoWWURRTAbH_4Jlri6-BwBqWsH6D_oWGKFCFNDnGi8t2wprK3qCFJXMtf4V5dhY2E5wDJtP8jnEKqsVXiOhQLMSmVIKR4OLhCDmZMjaNg3dxIGlIBlExDce0836au-6aGxHt9ShEEZOqfQJn6hWwDSgkerh8C7qHqqT2hnpViv4YLo5ld3divw85GjQ6tl50y0ROrAnYb2rkgNv6_4IN83u0CN93kK39eZkGRcVn3oiU6fiAf8Q-lOD-uEyAO5bw",
+        "disabled": false,
+        "type": "text"
+      },
+      {
+        "id": "10f3a4fd-650d-4c68-849d-967899b3b826",
+        "key": "User-Agent",
+        "value": "Mozilla/5.0",
+        "disabled": false,
+        "type": "text"
+      },
+      {
+        "id": "797dde6f-eb26-4d2a-a36e-803e89ea4dda",
+        "key": "Content-Type",
+        "value": "application/json",
+        "disabled": false,
+        "type": "text"
+      }
+    ],
+    "body": {
+      "mode": "raw",
+      "options": {
+        "raw": {
+          "language": "json"
+        }
+      },
+      "raw": "{\n  \"name\": \"Solicitação de Suporte via WhatsApp/Chatbot\",\n  \"content\": \"<p>Descrição detalhada do problema relatado pelo usuário no robô.</p>\",\n  \"urgency\": 3,\n  \"impact\": 3,\n  \"type\": 1,\n  \"request_type\": {\n    \"id\": 7\n  }\n}\n"
+    }
+  },
+  "event": {
+    "assert": [
+      {
+        "key": "response.status",
+        "value": "200",
+        "disabled": false,
+        "type": "text",
+        "operator": "=="
+      }
+    ]
+  }
+}
