@@ -1,10 +1,10 @@
 {
-  "request": "curl --location 'https://csc.bontech.com.br/api.php/v2.2/Assistance/Ticket' \\\n--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiZDdjMGRkYTVlYmY3ZTZkMWRhOTcxY2U0NDBhZDM4NDEyM2U0NWYxYTAxOTI1ZWQwYjIzNTVhMjNhOTMwODdjYzlmODA0MDllYmVjNmJjN2EiLCJpYXQiOjE3ODc0NDg3MjUuMzU5MjM5LCJuYmYiOjE3ODc0NDg3MjUuMzU5MjQ0LCJleHAiOjE3ODc0NTIzMjUuMzI1NjM3LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.xgvWl8ZadTk6W_jP--PuOmqCeA438R9WngklMIGY8qd9iTBb9M3tNNXBo-OxTAIVd25QxLeM8S9KYKsz1lqKLDQoWWURRTAbH_4Jlri6-BwBqWsH6D_oWGKFCFNDnGi8t2wprK3qCFJXMtf4V5dhY2E5wDJtP8jnEKqsVXiOhQLMSmVIKR4OLhCDmZMjaNg3dxIGlIBlExDce0836au-6aGxHt9ShEEZOqfQJn6hWwDSgkerh8C7qHqqT2hnpViv4YLo5ld3divw85GjQ6tl50y0ROrAnYb2rkgNv6_4IN83u0CN93kK39eZkGRcVn3oiU6fiAf8Q-lOD-uEyAO5bw' \\\n--header 'User-Agent: Mozilla/5.0' \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"name\": \"Solicitação de Suporte via WhatsApp/Chatbot\",\n  \"content\": \"<p>Descrição detalhada do problema relatado pelo usuário no robô.</p>\",\n  \"urgency\": 3,\n  \"impact\": 3,\n  \"type\": 1,\n  \"request_type\": {\n    \"id\": 7\n  }\n}\n'",
+  "request": "curl --location 'https://csc.bontech.com.br/api.php/v2.2/Assistance/Ticket' \\\n--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiNDM5MjM2Mjc0ZTJlYTU0NjBkNDZmZDFlY2I4YzNjNTRlNTJmYTY2OTA4NDJlZDExM2VjMzRiZjJhYzkzZjg2YWRkOGJjMjRhN2ZjZTgwOGIiLCJpYXQiOjE3ODc0NTA1NjkuMjg2MjM0LCJuYmYiOjE3ODc0NTA1NjkuMjg2MjM2LCJleHAiOjE3ODc0NTQxNjkuMjcyMDE2LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.aj0ht9sz67euoRWfSGOr-psrcvdXtiEisycTqvl-RYM7w3v6Zxd8AY97XTzbdLCVGpX2qauOptu9Ne01KD3XMfvnTrAjgWoQ6xS6jRj_GaKJvoXc5DxrlSssP69sm6fB7xWjftfqm9DrDQUrraMUJcq6CljRCQzSsBt2TlNellC5ja2ll03pYq_BclrZryLaSJCFzsdG6W9cd1tFDEuyg5jF6g-JCD45qDXF-qMHgpIBq7TBLhXENoyXFEpJHj4Nph6l6k28IIybglpgnRgjpobiKgQzBur6TUYnm5ELhGfSn6MpV0HbocWWzyzc9mP1d3CeCZd1Gx32IehnL03jFg' \\\n--header 'User-Agent: Mozilla/5.0' \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"name\": \"Solicitação de Suporte via WhatsApp/Chatbot 444\",\n  \"content\": \"<p>Descrição detalhada do problema relatado pelo usuário no robô.</p>\",\n  \"urgency\": 3,\n  \"impact\": 3,\n  \"type\": 1,\n  \"request_type\": {\n    \"id\": 7\n  }\n}\n'",
   "response": {
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "date": "Sun, 23 Aug 2026 01:32:49 GMT",
+      "date": "Sun, 23 Aug 2026 02:03:52 GMT",
       "content-type": "application/json",
       "transfer-encoding": "chunked",
       "connection": "close",
@@ -13,14 +13,14 @@
       "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
       "cache-control": "no-store, no-cache, must-revalidate, no-cache, private",
       "pragma": "no-cache",
-      "location": "/Assistance/Ticket/25",
+      "location": "/Assistance/Ticket/26",
       "x-content-type-options": "nosniff",
       "x-served-by": "csc.bontech.com.br",
       "cf-cache-status": "DYNAMIC",
-      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=XM8DZny7sSR%2FZ9KGYi%2Fj6ZZq3V1I0oqMohvaI%2FeZXa0pzSdbQcwP6UqaxBNLeb5PNw7OA8%2BDH5xHjg%2FX70sV%2BubXl6J3CJlmKGTnjy91dQTKgOybwvzs34Kjz%2FkIBbBbXlOKpKI%3D\"}]}",
-      "cf-ray": "a2f65d997afe37ab-GIG",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=4QJoDgwPzEg%2Fsrefp6xci5L1HlP8%2Fkv7AtxOJstMOMpywF4TPJtgFdkmFpsTLuDhh6z0V358L4roIYIRFTWDlx8ugZU9XdVJS%2FEmZwu7ABwhvlJD%2BBUoKjcJAmCEobnf5VKqf4Y%3D\"}]}",
+      "cf-ray": "a2f68b14fcb831fd-GIG",
       "alt-svc": "h3=\":443\"; ma=86400"
     },
-    "data": "{\"id\":25,\"href\":\"/Assistance/Ticket/25\"}"
+    "data": "{\"id\":26,\"href\":\"/Assistance/Ticket/26\"}"
   }
 }

@@ -72,16 +72,16 @@
       ]
     },
     "auth": {
-      "type": "basic",
+      "type": "noauth",
       "basic": [
         {
           "key": "username",
-          "value": "api.chatbot",
+          "value": "",
           "type": "string"
         },
         {
           "key": "password",
-          "value": "Aa#45678",
+          "value": "",
           "type": "string"
         }
       ],
