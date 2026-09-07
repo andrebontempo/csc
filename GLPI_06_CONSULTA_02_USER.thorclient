@@ -1,0 +1,65 @@
+{
+  "readme": "To open this file inside VSCode, you need to install Thor Client extension https://thorclient.com/",
+  "request": {
+    "url": {
+      "raw": "https://csc.bontech.com.br/api.php/v2.2/Assistance/Ticket?filter=user_recipient.id==7&limit=5&sort=date_creation:desc",
+      "query": [
+        {
+          "id": "0b1ab81b-0944-49ff-99c2-62bb5aaaf8ec",
+          "key": "filter",
+          "value": "user_recipient.id==7",
+          "type": "string",
+          "isFound": true
+        },
+        {
+          "id": "2dd41e01-40a6-442d-93e9-8a1db1eefb7e",
+          "key": "limit",
+          "value": "5",
+          "type": "string",
+          "isFound": true
+        },
+        {
+          "id": "0786261d-e13b-47ec-84a7-d3739096c954",
+          "key": "sort",
+          "value": "date_creation:desc",
+          "type": "string",
+          "isFound": true
+        }
+      ]
+    },
+    "header": [
+      {
+        "id": "86aabb05-d1bc-4de7-b138-9ff151a19d54",
+        "key": "Authorization",
+        "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiOTRhMmE0MzYxOTgwZDg3OTY1OGMzNzE5MTQwZjVmZGJhYTFiMTA5NzZlYTBjMDQ2MmVkMjMwY2ZhZDUyMGNmNjVjYTFjYWMzNjhlMDY5ZjEiLCJpYXQiOjE3ODg3MTgzMjQuMzc3NzA1LCJuYmYiOjE3ODg3MTgzMjQuMzc3NzEsImV4cCI6MTc4ODcyMTkyNC4zMjE0NDIsInN1YiI6IjIiLCJzY29wZXMiOlsiYXBpIl19.NWAc8rhWay2lEKJE9BvCJ218MgPnjhMyQqFshVVf1hyLrM_ko4A9bZ1ujlhEgD4J89FjC4K2uIhoslSI8DXe1P-K2bk8gJ1nakbzTkyiDEUpvvMf3losGuuU8B9zAAmXvC3mLWZq7_2mBg_iNHSEJ9ms0IO4DlBXlKRqAy-BctKQY_GoVYrSLKls6Drloji8ctkVrgXq_62_QcVK0zl5kVawdxUGMcq8J9p7JPCaG_PfRt2er9KuKiPnTnQAZ4YSEg2TzEJvegp8a0sEevOnys8nIwxekt6SD25oq2TLARBnJNTM9YLjr25LDSjdchMw76ppjN-gLzx_i6oKYGPXFw",
+        "disabled": false,
+        "type": "text"
+      },
+      {
+        "id": "8c179c1a-23e1-40e1-85ad-eecf334e5b3b",
+        "key": "User-Agent",
+        "value": "Mozilla/5.0",
+        "disabled": false,
+        "type": "text"
+      },
+      {
+        "id": "531288f8-79cd-49db-994f-239a50fb225d",
+        "key": "Accept",
+        "value": "application/json",
+        "disabled": false,
+        "type": "text"
+      }
+    ]
+  },
+  "event": {
+    "assert": [
+      {
+        "key": "response.status",
+        "value": "200",
+        "disabled": false,
+        "type": "text",
+        "operator": "=="
+      }
+    ]
+  }
+}
