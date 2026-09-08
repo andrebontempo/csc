@@ -1,0 +1,24 @@
+{
+  "request": "curl --location 'https://csc.bontech.com.br/api.php/token' \\\n--header 'User-Agent: Mozilla/5.0' \\\n--header 'Content-Type: application/x-www-form-urlencoded' \\\n--data-urlencode 'grant_type=password' \\\n--data-urlencode 'client_id=5a3432c5c107889953d7e97715e0a2d1ae7923386f32ea24b4959d611ec8a7a0' \\\n--data-urlencode 'client_secret=799a08c67d38a9a177c5b2a516f11aad153e095b970c10a097a4d1b3ff95ba93' \\\n--data-urlencode 'username=glpi' \\\n--data-urlencode 'password=glpi' \\\n--data-urlencode 'scope=api'",
+  "response": {
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "date": "Tue, 08 Sep 2026 20:58:21 GMT",
+      "content-type": "application/json; charset=UTF-8",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "server": "cloudflare",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "pragma": "no-cache",
+      "cache-control": "no-store, private",
+      "x-content-type-options": "nosniff",
+      "x-served-by": "csc.bontech.com.br",
+      "cf-cache-status": "DYNAMIC",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=aHMgbbhOxVV7km22sJ9miuslE48d%2FknJZ84olUvkvRL4kqFmy8w%2FK%2FK8bIM4PBJ70zEfUx9rd0ywMJSPorwpxj0Z8Eh%2FFtaDhsdocDqufSdlcgQma%2FRFj9BfvsxOxIUuIA846vc%3D\"}]}",
+      "cf-ray": "a380dee88f20d7d4-GRU",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "data": "{\"token_type\":\"Bearer\",\"expires_in\":3600,\"access_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiY2ZiZTUzOGY5MTBmNDk2ZjIwNDNlYmMwNmZkMDczNTEyNTBlNjNiMjhiOGViMTMyYjdlMzU1NTRjZGQ4OGExOWU2NTY0ODNkMjUyMWJjMWYiLCJpYXQiOjE3ODg5MDExMDEuMzY0NDA0LCJuYmYiOjE3ODg5MDExMDEuMzY0NDExLCJleHAiOjE3ODg5MDQ3MDEuMzQ3OTU4LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.W6xbEwItiCIwG2dPinOeZnoyu934xeCNjGuB4Z0xqGB7myINdZ2hWmbD3H-4nRmH-FGExtStGP0I2kOU8Xy3XRXsdECZb1YbyAdLfp7Cyw6bhNSIHYRRXOaTYJOdrGzeDb3OR6_kmr-QvogCYB7oDwqNvqaKwaFOv_Cqynq9iA1G7h7MwhoYdNWdMh1tCQ8eVJmYix8prC2h-rspYioTO2fRorVREkgg0p-Q99Mlz5rt3r2vQKG33L9s6GZoa8IWTQ_5PdO6IWS7yIUh2tVUAzpLMHtpDvP5kpCFRMC6TsMJYLhHk93k5Q3DRHss4sp3hgtDUTVWNmOoAnGXQR6zYw\",\"refresh_token\":\"def50200181374b1b50ba11f8cac2ec713d7b90d07f1db8fc97a9b1b59526e09690763287d187053a61db44cdc6c80c90772a9ead644db76e74946c19a6c3ebe2279c55c9d957745e8bad19ee81dbdb5f08ccd9d953c1b338f911eb4fcb3a23b4ded75410913ca57b3f7a601016ebab94d588684c33627b04e3978759d0c0be025675eaa6623c96df638fbababe9b8edad6dac9277fecef552c040f82b735c9217cf97a889492a368127dfb9d23aa241cec004bf44815b42c73854be4263fc0da1447d50ff9157aa0c0d9139bf4567b873384591afab63371f7c78fe1ee750d08fdf4c74808175a0b3ae36938ced74704ff99146113d1eb6ffd5bf397cdfed5ff8b587fbc2f10202e57ebe23a687fd2091b907db745e5e59a4939b0860f12d7457e89e3e6dd26acd1d9419da859b3b74b7588e4d5e38c4349cbfca90e06da87f2e048ce4081ab2e21a928e27b0b1ceadd61c5acf5b1f8361ffae1a73ad89759aca3b2c3dded9260550f71f3f49a2bd362ce0ba55ffd3011b9759c2a282f698ef1f7326c149abbaa0a42db57af7bd92f300866fb9ca0494fa354af76d2cd8dbe942d9d918f99a9b\"}"
+  }
+}

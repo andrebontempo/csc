@@ -37,7 +37,7 @@
         {
           "id": "e6599bb3-c99d-4ce2-a976-6969488f9dbf",
           "key": "client_id",
-          "value": "5a3432c5c107889953d7e97715e0a2d1ae7923386f32ea24b4959d611ec8a7a0\n",
+          "value": "5a3432c5c107889953d7e97715e0a2d1ae7923386f32ea24b4959d611ec8a7a0",
           "disabled": false,
           "type": "text"
         },
@@ -58,14 +58,14 @@
         {
           "id": "399c416a-54d1-4b5d-977e-7ce680c3677e",
           "key": "password",
-          "value": "glpi\n",
+          "value": "glpi",
           "disabled": false,
           "type": "text"
         },
         {
           "id": "9d2b9316-c289-4d55-b415-18bae3dc0449",
           "key": "scope",
-          "value": "api\n",
+          "value": "api",
           "disabled": false,
           "type": "text"
         }
