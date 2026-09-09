@@ -1,0 +1,25 @@
+{
+  "request": "curl --location --request PATCH 'https://csc.bontech.com.br/api.php/v2.2/Assistance/Ticket/35' \\\n--header 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiY2MxMmYxMmM1NjdkMjc0MWRiYjc4NTU0Y2M2MTY0YTdhZTg4Yjk2ZWY2NDBjMTM5NjZhNGIwZjkxZTMzZjYxOTM1YjQyNTQ3MzdjNDJlYmUiLCJpYXQiOjE3ODg5MTk1MTMuOTkwNzg5LCJuYmYiOjE3ODg5MTk1MTMuOTkwNzk0LCJleHAiOjE3ODg5MjMxMTMuOTc0MDM5LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.l3LMHVhmBQv5FDywUmPpl0vo7lhDD1_X1LLtQxfxx3k1E4phDqSvWZ1B7mFSz1m5AY8pNHVOMibNSgtWUji2LdtXecehAiaZMaPADEKWMpTvnLk4d6bBXQ8VQE8i_YJK9yopn3m343GTHAxklDMTMRaxa3Xkk5yG0yjQDjcT26A6ocj1BwTBqk7Np9WFwxnA6L7trx4zRV40GbVxD0ajxHR2vzFbX3P4s90dC_xAKJ-xLS4l0hg2UEEs10Xy4zfr21rutOGxfyjkUmjV_FicOpleEMT4tJDpsL0dYqTODLdaokcgHBCFaaUPFbMrTj85ytc2izlTM-DlAcQjjZSt2A' \\\n--header 'User-Agent: Mozilla/5.0' \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"user_recipient\": 7\n}'",
+  "response": {
+    "status": 200,
+    "statusText": "OK",
+    "headers": {
+      "date": "Wed, 09 Sep 2026 02:08:28 GMT",
+      "content-type": "application/json",
+      "transfer-encoding": "chunked",
+      "connection": "close",
+      "server": "cloudflare",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "expires": "Thu, 19 Nov 1981 08:52:00 GMT",
+      "cache-control": "no-store, no-cache, must-revalidate, no-cache, private",
+      "pragma": "no-cache",
+      "x-content-type-options": "nosniff",
+      "x-served-by": "csc.bontech.com.br",
+      "cf-cache-status": "DYNAMIC",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=W27qGqTTE%2F2eUo8BlLuhdbvmqHLB6ZiNYDinpT1DTaQSZMKy9ihFYIDNl56cx9WDkUPSW4sp9cAv80P2usDiESWhzX59HILEXOklMn2tt0dKzw8N1u1H56g9qGKojLlL7tmA62s%3D\"}]}",
+      "cf-ray": "a382a52cab6264de-GIG",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "data": "{\"id\":35,\"name\":\"Solicitação de Suporte via WhatsApp/Chatbot 999\",\"content\":\"<p>Descrição detalhada do problema relatado pelo usuário no robô.</p>\",\"is_deleted\":false,\"urgency\":3,\"impact\":3,\"priority\":3,\"actiontime\":0,\"begin_waiting_date\":null,\"waiting_duration\":0,\"resolution_duration\":0,\"close_duration\":0,\"resolution_date\":null,\"date_creation\":\"2026-09-09T02:06:46+00:00\",\"date_mod\":\"2026-09-09T02:08:27+00:00\",\"date\":\"2026-09-09T02:06:46+00:00\",\"date_solve\":null,\"date_close\":null,\"type\":1,\"external_id\":null,\"take_into_account_date\":null,\"take_into_account_duration\":0,\"sla_waiting_duration\":0,\"ola_waiting_duration\":0,\"ola_ttr_begin_date\":null,\"ola_tto_begin_date\":null,\"internal_resolution_date\":null,\"internal_take_into_account_date\":null,\"global_validation\":1,\"status\":{\"id\":1,\"name\":\"Novo\"},\"user_recipient\":{\"id\":7,\"name\":\"Jose.uria\"},\"user_editor\":{\"id\":2,\"name\":\"glpi\"},\"category\":null,\"location\":null,\"request_type\":{\"id\":7,\"name\":\"Chatbot\"},\"sla_ttr\":null,\"sla_tto\":null,\"ola_ttr\":null,\"ola_tto\":null,\"sla_level_ttr\":null,\"ola_level_ttr\":null,\"entity\":{\"id\":0,\"name\":\"Bontech\",\"completename\":\"Bontech\"},\"team\":[{\"role\":\"requester\",\"name\":\"Jose.uria\",\"realname\":\"Uria\",\"firstname\":\"José\",\"display_name\":\"Uria José\",\"id\":7,\"href\":\"/front/user.form.php?id=7\"}]}"
+  }
+}

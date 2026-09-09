@@ -4,7 +4,7 @@
     "status": 200,
     "statusText": "OK",
     "headers": {
-      "date": "Tue, 08 Sep 2026 20:58:21 GMT",
+      "date": "Wed, 09 Sep 2026 02:05:14 GMT",
       "content-type": "application/json; charset=UTF-8",
       "transfer-encoding": "chunked",
       "connection": "close",
@@ -15,10 +15,10 @@
       "x-content-type-options": "nosniff",
       "x-served-by": "csc.bontech.com.br",
       "cf-cache-status": "DYNAMIC",
-      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=aHMgbbhOxVV7km22sJ9miuslE48d%2FknJZ84olUvkvRL4kqFmy8w%2FK%2FK8bIM4PBJ70zEfUx9rd0ywMJSPorwpxj0Z8Eh%2FFtaDhsdocDqufSdlcgQma%2FRFj9BfvsxOxIUuIA846vc%3D\"}]}",
-      "cf-ray": "a380dee88f20d7d4-GRU",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=EUBHM%2Bxpc3ove6G2G5Ke%2B%2FbozuqEcMmBmAlY6QO9%2FD7MFPxJyFHdr7c2qtbZh0afurkphzexHgngu3MYg5FJOlsj4cnuHwfDroF5zlq5dgbPP5LD3gxppnzQw%2BSTcgs%2BF6r4Z9A%3D\"}]}",
+      "cf-ray": "a382a06eeab0a64f-GIG",
       "alt-svc": "h3=\":443\"; ma=86400"
     },
-    "data": "{\"token_type\":\"Bearer\",\"expires_in\":3600,\"access_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiY2ZiZTUzOGY5MTBmNDk2ZjIwNDNlYmMwNmZkMDczNTEyNTBlNjNiMjhiOGViMTMyYjdlMzU1NTRjZGQ4OGExOWU2NTY0ODNkMjUyMWJjMWYiLCJpYXQiOjE3ODg5MDExMDEuMzY0NDA0LCJuYmYiOjE3ODg5MDExMDEuMzY0NDExLCJleHAiOjE3ODg5MDQ3MDEuMzQ3OTU4LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.W6xbEwItiCIwG2dPinOeZnoyu934xeCNjGuB4Z0xqGB7myINdZ2hWmbD3H-4nRmH-FGExtStGP0I2kOU8Xy3XRXsdECZb1YbyAdLfp7Cyw6bhNSIHYRRXOaTYJOdrGzeDb3OR6_kmr-QvogCYB7oDwqNvqaKwaFOv_Cqynq9iA1G7h7MwhoYdNWdMh1tCQ8eVJmYix8prC2h-rspYioTO2fRorVREkgg0p-Q99Mlz5rt3r2vQKG33L9s6GZoa8IWTQ_5PdO6IWS7yIUh2tVUAzpLMHtpDvP5kpCFRMC6TsMJYLhHk93k5Q3DRHss4sp3hgtDUTVWNmOoAnGXQR6zYw\",\"refresh_token\":\"def50200181374b1b50ba11f8cac2ec713d7b90d07f1db8fc97a9b1b59526e09690763287d187053a61db44cdc6c80c90772a9ead644db76e74946c19a6c3ebe2279c55c9d957745e8bad19ee81dbdb5f08ccd9d953c1b338f911eb4fcb3a23b4ded75410913ca57b3f7a601016ebab94d588684c33627b04e3978759d0c0be025675eaa6623c96df638fbababe9b8edad6dac9277fecef552c040f82b735c9217cf97a889492a368127dfb9d23aa241cec004bf44815b42c73854be4263fc0da1447d50ff9157aa0c0d9139bf4567b873384591afab63371f7c78fe1ee750d08fdf4c74808175a0b3ae36938ced74704ff99146113d1eb6ffd5bf397cdfed5ff8b587fbc2f10202e57ebe23a687fd2091b907db745e5e59a4939b0860f12d7457e89e3e6dd26acd1d9419da859b3b74b7588e4d5e38c4349cbfca90e06da87f2e048ce4081ab2e21a928e27b0b1ceadd61c5acf5b1f8361ffae1a73ad89759aca3b2c3dded9260550f71f3f49a2bd362ce0ba55ffd3011b9759c2a282f698ef1f7326c149abbaa0a42db57af7bd92f300866fb9ca0494fa354af76d2cd8dbe942d9d918f99a9b\"}"
+    "data": "{\"token_type\":\"Bearer\",\"expires_in\":3600,\"access_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1YTM0MzJjNWMxMDc4ODk5NTNkN2U5NzcxNWUwYTJkMWFlNzkyMzM4NmYzMmVhMjRiNDk1OWQ2MTFlYzhhN2EwIiwianRpIjoiY2MxMmYxMmM1NjdkMjc0MWRiYjc4NTU0Y2M2MTY0YTdhZTg4Yjk2ZWY2NDBjMTM5NjZhNGIwZjkxZTMzZjYxOTM1YjQyNTQ3MzdjNDJlYmUiLCJpYXQiOjE3ODg5MTk1MTMuOTkwNzg5LCJuYmYiOjE3ODg5MTk1MTMuOTkwNzk0LCJleHAiOjE3ODg5MjMxMTMuOTc0MDM5LCJzdWIiOiIyIiwic2NvcGVzIjpbImFwaSJdfQ.l3LMHVhmBQv5FDywUmPpl0vo7lhDD1_X1LLtQxfxx3k1E4phDqSvWZ1B7mFSz1m5AY8pNHVOMibNSgtWUji2LdtXecehAiaZMaPADEKWMpTvnLk4d6bBXQ8VQE8i_YJK9yopn3m343GTHAxklDMTMRaxa3Xkk5yG0yjQDjcT26A6ocj1BwTBqk7Np9WFwxnA6L7trx4zRV40GbVxD0ajxHR2vzFbX3P4s90dC_xAKJ-xLS4l0hg2UEEs10Xy4zfr21rutOGxfyjkUmjV_FicOpleEMT4tJDpsL0dYqTODLdaokcgHBCFaaUPFbMrTj85ytc2izlTM-DlAcQjjZSt2A\",\"refresh_token\":\"def50200b926015613bd363a8ed7a475ae8cbd9824f54ac09deca30a325193e5fbf5438ef185d1e4b715b902162eba20bfff24bf7b188f5787a004b970d830c6c685cf4d0b4b355b210a6316fdaababcc960b15e91adca5b19ba0e28da5bbf983400ff13a38180e8d55e94989bcb2a609dab39db7e411ecda7620fc9d181932465f9d3351a0d8e5e7c5b9e14f960c0856ed6778450a5d942b25b61ed1aeab4ff92e5a68284d7d5b53f3ee2c21c4eafc73733e3b32acf5c92d50d3dbd4a194c93b14c010222b4a60bf78a99d167f559a54a91c2c191d1d21c406062d451b0ff568ef15c5b6cfa8407d76d911ebbf89d254d682ebe9754e3422c3f04ac1378e10e1a9411009be15a5f9ccdca091e9ea5e0dc97029bf4a035c5ebc3d0ad2349bdfc578b525395eb4d367e36c88b0bd869539e94897df37f1a646a7ef0440da81ed101d39cb662713c8a8c91582c1c55d5c067bfc48e627887e81e4d398deeab76617a873a42ca781a5d91c030aeb65f6c0b7788d83a051ac67641a9101c30c4dff77f305a53acccddcb2aca9a5903f1850a0c3948f8724fd48b71ea8dc342b14703c44b7818e84165\"}"
   }
 }
