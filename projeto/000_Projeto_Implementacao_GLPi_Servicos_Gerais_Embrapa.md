@@ -85,7 +85,7 @@ Implantar a plataforma GLPi v11 como solução corporativa unificada de Central 
 ### Objetivos Específicos
 1. **Modelar e estruturar 44 Entidades lógicas** no GLPi com isolamento adequado de dados e regras de visibilidade.
 2. **Padronizar o Catálogo de Serviços Gerais** em 4 categorias operacionais e 22 subcategorias.
-3. **Implantar formulários dinâmicos inteligentes** utilizando o plugin *Formcreator*, reduzindo erros de preenchimento pelos usuários.
+3. **Implantar formulários dinâmicos inteligentes** utilizando o recurso nativo *Formcreator* (integrado ao GLPi 11 Core), reduzindo erros de preenchimento pelos usuários.
 4. **Integrar a plataforma com o AD/LDAP corporativo**, permitindo Single Sign-On (SSO) e sincronização contínua de usuários e lotações.
 5. **Estabelecer SLAs e OLAs nacionais e regionais** com escalonamento automático de tickets.
 6. **Automação de processos via n8n** para envio de alertas via e-mail e mensageria corporativa, além de orquestração de relatórios.
@@ -102,7 +102,7 @@ Implantar a plataforma GLPi v11 como solução corporativa unificada de Central 
                                ┌──────────────────────────────────┐
                                │   GLPi v11 (Portal de Chamados)  │
                                │   - 44 Entidades (SEDE + 43 UDs) │
-                               │   - Formcreator (Formulários)    │
+                               │   - Formcreator (Nativo)        │
                                └─────────┬────────────────┬───────┘
                                          │                │
             ┌────────────────────────────┘                └────────────────────────────┐
@@ -153,7 +153,7 @@ Com base no levantamento técnico dos materiais de referência (`Souscription-EN
 |----------|------------------------|---------------------------------------------------------|
 | **Custo de Licença** | Gratuito (Open Source / GPLv3) | Comercial (€1.200 a €12.000+/ano dependendo do porte) |
 | **Suporte Técnico** | Comunidade / Equipe Interna de TI da Embrapa | Suporte oficial Nível 3 com SLA garantido pelo fabricante (Teclib') |
-| **Plugins Essenciais (Formcreator, Escalade, PDF, Data Injection, Tags, Metabase)** | **Disponíveis Gratuitamente** na comunidade | Incluídos e com suporte oficial do fabricante |
+| **Recursos Nativos e Plugins Essenciais (Formcreator nativo, Escalade, PDF, Data Injection, Tags, Metabase)** | **Disponíveis Gratuitamente** na comunidade / nativos no GLPi 11 | Incluídos e com suporte oficial do fabricante |
 | **Plugins Exclusivos (WhatsApp, OAuth SSO avançado, Branding, GLPI-AI, SCIM, Splitcat)** | Não inclusos na versão pura (necessitam dev próprio ou plugins alternativos) | Incluídos na assinatura |
 | **Indicado para a Embrapa** | **SIM (Opção Recomendada para o Kick-off)** | Opção de transição caso haja necessidade futura de suporte N3 homologado |
 
@@ -236,7 +236,7 @@ O acesso ao sistema será estruturado em **5 Perfis Principais**:
 
 | Perfil GLPi | Público Alvo | Escopo de Visibilidade | Permissões Principais |
 |-------------|--------------|────────────────────────|───────────────────────|
-| **Self-Service / Requerente** | Todos os Colaboradores da Embrapa | Próprios chamados | Abrir chamados via Formcreator, acompanhar status, responder interações, aprovar/validar solução. |
+| **Self-Service / Requerente** | Todos os Colaboradores da Embrapa | Próprios chamados | Abrir chamados via Formcreator nativo, acompanhar status, responder interações, aprovar/validar solução. |
 | **Técnico Local de Serviços Gerais** | Equipe Operacional da UD (Prestadores / Empregados) | Chamados da sua Entidade/UD | Atribuir chamados a si, atualizar status, registrar solução técnica, apontar horas/custos. |
 | **Supervisor de Serviços Gerais (UD)** | Gestor de Facilidades local da UD | Chamados da sua Entidade/UD | Reatribuir chamados, aprovar requisições de maior impacto, acompanhar SLAs locais, emitir relatórios da UD. |
 | **Gestor Corporativo de Serviços Gerais** | Coordenadoria Geral de Infraestrutura (SEDE) | Global (44 Entidades - Recursivo) | Visualizar relatórios nacionais, alterar parâmetros globais de SLA, gerenciar catálogo unificado. |
@@ -307,9 +307,9 @@ Catálogo de Serviços Gerais
 | **MANUTENÇÃO/INFRAESTRUTURA** | REDE ELÉTRICA | Solicitação de Serviço | Portal Autoatendimento | Todas | Baixa | Muito Baixo | Prioridade 5 | 2h | 5 Dias |
 | **OUTROS** | SERVIÇO NÃO CLASSIFICADO | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Baixo | Prioridade 4 | 2h | 2 Dias |
 
-## 4.2 Formulários Dinâmicos Inteligentes (Formcreator)
+## 4.2 Formulários Dinâmicos Inteligentes (Formcreator Nativo)
 
-Para evitar chamados abertos com descrições incompletas ("minha torneira quebrou" sem indicar o bloco ou sala), será utilizado o plugin **Formcreator**.
+Para evitar chamados abertos com descrições incompletas ("minha torneira quebrou" sem indicar o bloco ou sala), será utilizado o recurso nativo **Formcreator** (incorporado nativamente ao core do GLPi 11).
 
 ### Exemplo de Fluxo do Formulário: *Manutenção / Infraestrutura (ex: Hidráulica)*
 1. **Seleção da Entidade**: Preenchida automaticamente com base na lotação do usuário no AD.
@@ -463,8 +463,8 @@ Fase 1: Infraestrutura & Entidades (Mês 1-2)
   └── Integração LDAP/AD para Autenticação Unificada
 
 Fase 2: Catálogo de Serviços Gerais & Formulários (Mês 3-4)
-  ├── Parametrização dos 6 Domínios de Serviços Gerais
-  ├── Construção de Formulários Dinâmicos com Formcreator
+  ├── Parametrização das 4 Categorias de Serviços Gerais (22 Subcategorias)
+  ├── Construção de Formulários Dinâmicos com Formcreator Nativo
   ├── Definição de Perfis (RBAC), Grupos Técnicos e Matriz de SLAs
   └── Configuração do Motor de Notificações por E-mail
 
@@ -558,7 +558,7 @@ O projeto de implementação do **GLPi v11** para os Serviços Gerais da Embrapa
 
 | Plugin / Recurso | Origem / Modalidade | Função na Arquitetura Embrapa | Prioridade de Implantação |
 |------------------|---------------------|--------------------------------|---------------------------|
-| **Formcreator** | Community (Grátis) / Network | Construção de formulários dinâmicos e catálogo de serviços | **Fase 1 (Crítico)** |
+| **Formcreator** | Nativo no GLPi 11 Core | Construção de formulários dinâmicos e catálogo de serviços | **Fase 1 (Crítico)** |
 | **LDAP / AD Sync** | Nativo do GLPi Core | Sincronização de usuários e autenticação unificada | **Fase 1 (Crítico)** |
 | **Escalade** | Community / Network | Escalonamento automático de chamados por tempo de SLA | **Fase 2 (Alto)** |
 | **Fields** | Community / Network | Adição de campos personalizados em chamados e ativos | **Fase 2 (Médio)** |
