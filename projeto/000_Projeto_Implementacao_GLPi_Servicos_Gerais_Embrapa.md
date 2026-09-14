@@ -43,19 +43,17 @@ A Embrapa (Empresa Brasileira de Pesquisa Agropecuária) possui uma estrutura or
 
 Este documento estabelece o **Projeto de Implementação Corporativa do GLPi (v11)** no âmbito da **Central de Serviços Compartilhados (CSC)** da Embrapa. A solução foi desenhada para atuar como uma plataforma unificada de *Enterprise Service Management* (ESM), habilitando o atendimento multi-tenant parametrizado em **44 Entidades independentes com herança hierárquica**.
 
-A estratégia arquitetural adota prioritariamente a versão **GLPi Community Edition**, sustentada por um modelo de **Governança Interna Enterprise** (ambientes segregados de Homologação/Produção, rotinas automatizadas de backup e sincronização, monitoramento em tempo real via Zabbix e clusterização de alta disponibilidade). Avalia-se também a viabilidade de contratação de subscrições *GLPI Network* para cenários com demanda de suporte Nível 3 oficial do fabricante ou plugins exclusivos.
+A estratégia arquitetural adota prioritariamente a versão **GLPi Community Edition**, sustentada por um modelo de **Governança Interna Enterprise** (ambientes segregados de Homologação/Produção, rotinas automatizadas de backup e sincronização, monitoramento contínuo da saúde do sistema e clusterização de alta disponibilidade). Avalia-se também a viabilidade de contratação de subscrições *GLPI Network* para cenários com demanda de suporte Nível 3 oficial do fabricante ou plugins exclusivos.
 
-No **escopo inicial (Fase 1)**, a plataforma atenderá exclusivamente os seis domínios essenciais de Serviços Gerais:
-1. **Alvenaria e Reformas Estruturais**
-2. **Hidráulica e Encanamento**
-3. **Marcenaria e Mobiliário**
-4. **Telefonia e Comunicações Operacionais**
-5. **Segurança Patrimonial e Portaria**
-6. **Limpeza, Conservação e Jardinagem**
+No **escopo inicial (Fase 1)**, a plataforma atenderá 4 categorias principais e 22 subcategorias da área de Serviços Gerais:
+1. **Limpeza / Conservação** (Alvenaria, Chaveiro, Resíduos Sólidos, Limpeza-Higienização Predial, Pintura)
+2. **Logística / Segurança** (Acesso ao Parque, Almoxarifado, Autorização para Condução, Incidente no Estacionamento, Auditórios e Espaços Comuns, Cadastro de Veículo, Agendamento de Veículo, Cadastro no SISDAP)
+3. **Manutenção / Infraestrutura** (Ar Condicionado, Cabeamento Lógico, Marcenaria, Paisagismo Interno, Elevador, Hidráulica, Rede de Telefonia, Rede Elétrica)
+4. **Outros** (Serviço Não Classificado)
 
 A arquitetura foi concebida modularmente para permitir a **expansão futura sem retrabalho estrutural** para os setores de **Recursos Humanos (RH)**, **Financeiro/Suprimentos** e o **SAC Corporativo da Embrapa**. 
 
-Integrações nativas e orquestradas via **n8n**, autenticação unificada por **AD/LDAP**, monitoramento via **Zabbix** e alinhamento com a **Base de Conhecimento KCS (BookStack)** completam este ecossistema moderno, eficiente e orientado a dados.
+Integrações nativas e orquestradas via **n8n**, autenticação unificada por **AD/LDAP** e alinhamento com a **Base de Conhecimento KCS (BookStack)** completam este ecossistema moderno, eficiente e orientado a dados.
 
 ---
 
@@ -86,11 +84,11 @@ Implantar a plataforma GLPi v11 como solução corporativa unificada de Central 
 
 ### Objetivos Específicos
 1. **Modelar e estruturar 44 Entidades lógicas** no GLPi com isolamento adequado de dados e regras de visibilidade.
-2. **Padronizar o Catálogo de Serviços Gerais** em 6 grandes grupos operacionais.
+2. **Padronizar o Catálogo de Serviços Gerais** em 4 categorias operacionais e 22 subcategorias.
 3. **Implantar formulários dinâmicos inteligentes** utilizando o plugin *Formcreator*, reduzindo erros de preenchimento pelos usuários.
 4. **Integrar a plataforma com o AD/LDAP corporativo**, permitindo Single Sign-On (SSO) e sincronização contínua de usuários e lotações.
 5. **Estabelecer SLAs e OLAs nacionais e regionais** com escalonamento automático de tickets.
-6. **Integração com Zabbix e n8n** para monitoramento da infraestrutura do GLPi e automação de alertas via e-mail e mensageria corporativa.
+6. **Automação de processos via n8n** para envio de alertas via e-mail e mensageria corporativa, além de orquestração de relatórios.
 7. **Garantir a expansibilidade da arquitetura** para recepção futura dos módulos de RH, Financeiro e SAC.
 
 ## 1.3 Visão do Ecossistema CSC da Embrapa
@@ -109,15 +107,13 @@ Implantar a plataforma GLPi v11 como solução corporativa unificada de Central 
                                          │                │
             ┌────────────────────────────┘                └────────────────────────────┐
             ▼                                                                          ▼
-┌───────────────────────┐                                                   ┌───────────────────────┐
-│   Serviços Gerais     │                                                   │  Expansão Futura      │
-│ - Alvenaria           │                                                   │ - Recursos Humanos    │
-│ - Hidráulica          │                                                   │ - Financeiro          │
-│ - Marcenaria          │                                                   │ - SAC Embrapa         │
-│ - Telefonia           │                                                   │                       │
-│ - Segurança           │                                                   │                       │
-│ - Limpeza/Conservação │                                                   │                       │
-└───────────────────────┘                                                   └───────────────────────┘
+┌─────────────────────────┐                                                 ┌───────────────────────┐
+│     Serviços Gerais     │                                                 │  Expansão Futura      │
+│ - Limpeza / Conservação │                                                 │ - Recursos Humanos    │
+│ - Logística / Segurança │                                                 │ - Financeiro          │
+│ - Manutenção / Infra    │                                                 │ - SAC Embrapa         │
+│ - Outros                │                                                 │                       │
+└─────────────────────────┘                                                 └───────────────────────┘
             │                                                                          │
             └────────────────────────────┬─────────────────────────────────────────────┘
                                          │
@@ -126,7 +122,6 @@ Implantar a plataforma GLPi v11 como solução corporativa unificada de Central 
                                │   Barramento de Integrações      │
                                │  - AD/LDAP (Autenticação)        │
                                │  - n8n (Orquestração / Alerting) │
-                               │  - Zabbix (Monitoramento)        │
                                │  - BookStack (Base KCS)          │
                                └──────────────────────────────────┘
 ```
@@ -145,7 +140,7 @@ A implementação do GLPi na Embrapa será guiada por **10 Princípios Corporati
 4. **Decisão Baseada em Governança, Não Apenas em Licença**: Conforme a análise estratégica do projeto (`001 - Primeiras impressões.pdf`), o sucesso do GLPi em ambiente corporativo depende do nível de governança de TI aplicada (DevOps, backup, HA, monitoramento), seja no modelo Community ou Network.
 5. **Rastreabilidade e Auditabilidade**: Todas as ações, alterações de status e atribuições em chamados devem ser registradas em log auditável.
 6. **Orientação a SLA e OLA**: Todo serviço do catálogo deve possuir tempo máximo de primeira resposta e tempo de solução acordado.
-7. **Integração sem Acoplamento Rígido**: As integrações com Zabbix, AD/LDAP e BookStack serão mediadas por APIs REST e orquestradas preferencialmente via n8n.
+7. **Integração sem Acoplamento Rígido**: As integrações com AD/LDAP e BookStack serão mediadas por APIs REST e orquestradas preferencialmente via n8n.
 8. **Reaproveitamento de Conhecimento**: Soluções de chamados recorrentes devem obrigatoriamente alimentar a Base de Conhecimento KCS.
 9. **Segurança e Conformidade (LGPD)**: Proteção de dados pessoais de solicitantes e restrição de acesso por perfil (RBAC).
 10. **Escalabilidade Continuada**: A infraestrutura física/virtual deve suportar o crescimento do volume de tickets com o ingresso dos novos setores (RH, Financeiro, SAC).
@@ -163,7 +158,7 @@ Com base no levantamento técnico dos materiais de referência (`Souscription-EN
 | **Indicado para a Embrapa** | **SIM (Opção Recomendada para o Kick-off)** | Opção de transição caso haja necessidade futura de suporte N3 homologado |
 
 > [!IMPORTANT]
-> **Recomendação Estratégica**: A Embrapa adotará inicialmente o **GLPi 11 Community Edition**. O valor financeiro economizado em licenças será investido na estruturação de uma **Governança Interna de Excelência** (servidores redundantes, monitoramento Zabbix, rotinas de staging e capacitação das equipes locais), garantindo autonomia e alta disponibilidade.
+> **Recomendação Estratégica**: A Embrapa adotará inicialmente o **GLPi 11 Community Edition**. O valor financeiro economizado em licenças será investido na estruturação de uma **Governança Interna de Excelência** (servidores redundantes, rotinas de staging, monitoramento de saúde do servidor e capacitação das equipes locais), garantindo autonomia e alta disponibilidade.
 
 ## 2.3 Requisitos de Alta Disponibilidade e DevOps
 
@@ -173,7 +168,7 @@ Para assegurar estabilidade de nível corporativo (*Enterprise Grade*), a infrae
 * **Cluster de Aplicação**: Servidores web Apache/Nginx balanceados com PHP 8.2+.
 * **Banco de Dados Redundante**: MariaDB / MySQL em réplica com failover automático.
 * **Backup Automatizado**: Dumps de banco diários e cópia de anexos com retenção incremental de 30 dias off-site.
-* **Monitoramento 24x7 via Zabbix**: Checagem de disponibilidade HTTP, consumo de memória PHP, fila de e-mails, latência do banco de dados e armazenamento do diretório `/files`.
+* **Monitoramento e Saúde da Aplicação 24x7**: Checagem de disponibilidade HTTP, consumo de memória PHP, fila de e-mails, latência do banco de dados e armazenamento do diretório `/files`.
 
 ---
 
@@ -245,49 +240,78 @@ O acesso ao sistema será estruturado em **5 Perfis Principais**:
 | **Técnico Local de Serviços Gerais** | Equipe Operacional da UD (Prestadores / Empregados) | Chamados da sua Entidade/UD | Atribuir chamados a si, atualizar status, registrar solução técnica, apontar horas/custos. |
 | **Supervisor de Serviços Gerais (UD)** | Gestor de Facilidades local da UD | Chamados da sua Entidade/UD | Reatribuir chamados, aprovar requisições de maior impacto, acompanhar SLAs locais, emitir relatórios da UD. |
 | **Gestor Corporativo de Serviços Gerais** | Coordenadoria Geral de Infraestrutura (SEDE) | Global (44 Entidades - Recursivo) | Visualizar relatórios nacionais, alterar parâmetros globais de SLA, gerenciar catálogo unificado. |
-| **Administrador do Sistema** | Equipe de TI / Sustentação do GLPi | Global (Configuração do Sistema) | Gerenciar infraestrutura, plugins, integrações AD/n8n/Zabbix, regras de negócio e dicionários. |
+| **Administrador do Sistema** | Equipe de TI / Sustentação do GLPi | Global (Configuração do Sistema) | Gerenciar infraestrutura, plugins, integrações AD/n8n, regras de negócio e dicionários. |
 
 ---
 
 # Capítulo 4 — Catálogo de Serviços Gerais e Desenho de Processos
 
-## 4.1 Escopo Inicial: Os 6 Domínios de Serviços Gerais
+## 4.1 Escopo Inicial: Categorias e Catálogo de Serviços Gerais
 
-O catálogo inicial contempla exclusivamente demandas de manutenção física e facilidades prediais da Embrapa, categorizados em 6 grandes famílias:
+O catálogo inicial contempla 4 categorias funcionais divididas em 22 subcategorias padronizadas para atendimento em todas as unidades da Embrapa:
 
 ```text
 Catálogo de Serviços Gerais
-├── 1. Alvenaria e Reformas Estruturais
-│   ├── Reparo em Paredes / Pintura
-│   ├── Troca de Pisos / Revestimentos
-│   └── Infiltrações e Calhas
-├── 2. Hidráulica e Encanamento
-│   ├── Vazamentos e Encanamentos
-│   ├── Manutenção de Sanotários / Torneiras
-│   └── Caixa d'Água e Reservatórios
-├── 3. Marcenaria e Mobiliário
-│   ├── Conserto de Portas / Fechaduras / Chaves
-│   ├── Ajuste de Divisórias e Estações de Trabalho
-│   └── Reparo / Montagem de Móveis
-├── 4. Telefonia e Comunicações Operacionais
-│   ├── Instalação / Mudança de Ramal Físico
-│   ├── Defeito em Aparelho Telefônico
-│   └── Manutenção de Cabeamento Telefônico
-├── 5. Segurança Patrimonial e Portaria
-│   ├── Controle de Acesso / Crachás
-│   ├── Rondas e Monitoramento Patrimonial
-│   └── Solicitação de Chaves de Enseada / Ambientes
-└── 6. Limpeza, Conservação e Jardinagem
-    ├── Limpeza de Emergência / Derramamentos
-    ├── Coleta de Resíduos / Descarte Especial
-    └── Manutenção de Áreas Verdes / Jardinagem
+├── 1. LIMPEZA/CONSERVAÇÃO
+│   ├── Alvenaria
+│   ├── Chaveiro
+│   ├── Resíduos Sólidos
+│   ├── Limpeza-Higienização Predial
+│   └── Pintura
+├── 2. LOGÍSTICA/SEGURANÇA
+│   ├── Acesso ao Parque
+│   ├── Almoxarifado
+│   ├── Autorização para Condução
+│   ├── Incidente no Estacionamento
+│   ├── Auditórios e Espaços Comuns
+│   ├── Cadastro de Veículo
+│   ├── Agendamento de Veículo
+│   └── Cadastro no SISDAP
+├── 3. MANUTENÇÃO/INFRAESTRUTURA
+│   ├── Ar Condicionado
+│   ├── Cabeamento Lógico
+│   ├── Marcenaria
+│   ├── Paisagismo Interno
+│   ├── Elevador
+│   ├── Hidráulica
+│   ├── Rede de Telefonia
+│   └── Rede Elétrica
+└── 4. OUTROS
+    └── Serviço Não Classificado
 ```
+
+### Catálogo Detalhado de Serviços e SLAs Padrão
+
+| Categoria | Subcategoria | Tipo de Serviço | Visibilidade | Unidade | Urgência | Impacto | Prioridade | Tempo Resposta (TTR) | Tempo SLA (TTO) |
+|-----------|--------------|-----------------|--------------|---------|----------|---------|------------|----------------------|-----------------|
+| **LIMPEZA/CONSERVAÇÃO** | ALVENARIA | Solicitação de Serviço | Portal Autoatendimento | Todas | Baixa | Muito Baixo | Prioridade 5 | 2h | 5 Dias |
+| **LIMPEZA/CONSERVAÇÃO** | CHAVEIRO | Solicitação de Serviço | Portal Autoatendimento | Todas | Baixa | Muito Baixo | Prioridade 5 | 2h | 5 Dias |
+| **LIMPEZA/CONSERVAÇÃO** | RESÍDUOS SÓLIDOS | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Normal | Prioridade 3 | 2h | 8h |
+| **LIMPEZA/CONSERVAÇÃO** | LIMPEZA-HIGIENIZAÇÃO PREDIAL | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Normal | Prioridade 3 | 2h | 8h |
+| **LIMPEZA/CONSERVAÇÃO** | PINTURA | Solicitação de Serviço | Portal Autoatendimento | Todas | Muito Baixa | Baixo | Prioridade 5 | 2h | 5 Dias |
+| **LOGÍSTICA/SEGURANÇA** | ACESSO AO PARQUE | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Baixo | Prioridade 4 | 2h | 2 Dias |
+| **LOGÍSTICA/SEGURANÇA** | ALMOXARIFADO | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Normal | Prioridade 3 | 2h | 8h |
+| **LOGÍSTICA/SEGURANÇA** | AUTORIZAÇÃO PARA CONDUÇÃO | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Baixo | Prioridade 4 | 2h | 2 Dias |
+| **LOGÍSTICA/SEGURANÇA** | INCIDENTE NO ESTACIONAMENTO | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Muito Baixo | Prioridade 4 | 2h | 2 Dias |
+| **LOGÍSTICA/SEGURANÇA** | AUDITÓRIOS E ESPAÇOS COMUNS | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Muito Baixo | Prioridade 4 | 2h | 2 Dias |
+| **LOGÍSTICA/SEGURANÇA** | CADASTRO DE VEÍCULO | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Baixo | Prioridade 4 | 2h | 2 Dias |
+| **LOGÍSTICA/SEGURANÇA** | AGENDAMENTO DE VEÍCULO | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Baixo | Prioridade 4 | 2h | 2 Dias |
+| **LOGÍSTICA/SEGURANÇA** | CADASTRO NO SISDAP | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Muito Baixo | Prioridade 4 | 2h | 2 Dias |
+| **MANUTENÇÃO/INFRAESTRUTURA** | AR CONDICIONADO | Solicitação de Serviço | Portal Autoatendimento | Todas | Baixa | Muito Baixo | Prioridade 5 | 2h | 5 Dias |
+| **MANUTENÇÃO/INFRAESTRUTURA** | CABEAMENTO LÓGICO | Solicitação de Serviço | Portal Autoatendimento | Todas | Baixa | Muito Baixo | Prioridade 5 | 2h | 5 Dias |
+| **MANUTENÇÃO/INFRAESTRUTURA** | MARCENARIA | Solicitação de Serviço | Portal Autoatendimento | Todas | Baixa | Muito Baixo | Prioridade 5 | 2h | 5 Dias |
+| **MANUTENÇÃO/INFRAESTRUTURA** | PAISAGISMO INTERNO | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Baixo | Prioridade 4 | 2h | 2 Dias |
+| **MANUTENÇÃO/INFRAESTRUTURA** | ELEVADOR | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Normal | Prioridade 3 | 2h | 8h |
+| **MANUTENÇÃO/INFRAESTRUTURA** | HIDRÁULICA | Solicitação de Serviço | Portal Autoatendimento | Todas | Baixa | Muito Baixo | Prioridade 5 | 2h | 5 Dias |
+| **MANUTENÇÃO/INFRAESTRUTURA** | REDE DE TELEFONIA | Solicitação de Serviço | Portal Autoatendimento | Todas | Baixa | Muito Baixo | Prioridade 5 | 2h | 5 Dias |
+| **MANUTENÇÃO/INFRAESTRUTURA** | REDE ELÉTRICA | Solicitação de Serviço | Portal Autoatendimento | Todas | Baixa | Muito Baixo | Prioridade 5 | 2h | 5 Dias |
+| **OUTROS** | SERVIÇO NÃO CLASSIFICADO | Solicitação de Serviço | Portal Autoatendimento | Todas | Normal | Baixo | Prioridade 4 | 2h | 2 Dias |
 
 ## 4.2 Formulários Dinâmicos Inteligentes (Formcreator)
 
 Para evitar chamados abertos com descrições incompletas ("minha torneira quebrou" sem indicar o bloco ou sala), será utilizado o plugin **Formcreator**.
 
-### Exemplo de Fluxo do Formulário: *Manutenção Hidráulica*
+### Exemplo de Fluxo do Formulário: *Manutenção / Infraestrutura (ex: Hidráulica)*
 1. **Seleção da Entidade**: Preenchida automaticamente com base na lotação do usuário no AD.
 2. **Localização Precisa**:
    - Bloco / Prédio (Menu Dropdown)
@@ -318,12 +342,10 @@ A arquitetura do GLPi foi projetada para receber novos módulos de atendimento s
 │  Serviços Gerais  │  │ Recursos Humanos  │  │   Financeiro      │  │    SAC Embrapa    │
 │    (FASE 1)       │  │    (FASE 2)       │  │    (FASE 3)       │  │    (FASE 4)       │
 ├───────────────────┤  ├───────────────────┤  ├───────────────────┤  ├───────────────────┤
-│ - Alvenaria       │  │ - Férias / Folha  │  │ - Reembolsos      │  │ - Atendimento ao  │
-│ - Hidráulica      │  │ - Benefícios      │  │ - Viagens/Diárias │  │   Cidadão         │
-│ - Marcenaria      │  │ - Avaliação Desem.│  │ - Compras/Contratos│  │ - Ouvidoria       │
-│ - Telefonia       │  │ - Movimentação    │  │ - Prestação Contas│  │ - Consultas       │
-│ - Segurança       │  │                   │  │                   │  │   Técnicas        │
-│ - Limpeza         │  │                   │  │                   │  │                   │
+│ - Limpeza/Conserv.│  │ - Férias / Folha  │  │ - Reembolsos      │  │ - Atendimento ao  │
+│ - Logíst./Segur.  │  │ - Benefícios      │  │ - Viagens/Diárias │  │   Cidadão         │
+│ - Manut./Infra.   │  │ - Avaliação Desem.│  │ - Compras/Contratos│  │ - Ouvidoria       │
+│ - Outros          │  │                   │  │                   │  │   Técnicas        │
 └───────────────────┘  └───────────────────┘  └───────────────────┘  └───────────────────┘
 ```
 
@@ -359,13 +381,13 @@ O **n8n** será utilizado como a camada de integração low-code para automatiza
 2. **Consolidação de Relatórios Exectivos**: Extração semanal via API REST do GLPi e envio automatizado de dashboards em PDF para os Chefes Adjuntos de Administração (CHADs) de cada UD.
 3. **Sincronização com Sistemas Legados**: Integração com sistemas de patrimônio ou RH da Embrapa.
 
-## 5.3 Monitoramento com Zabbix
+## 5.3 Monitoramento da Infraestrutura e Saúde do Sistema
 
-A infraestrutura do GLPi será monitorada 24x7 pelo **Zabbix Corporativo**:
+A infraestrutura do GLPi será monitorada 24x7 por rotinas automáticas de infraestrutura da TI Corporativa:
 
-* **Checagens de Aplicação**: Latência da API, disponibilidade da interface web, tempo de resposta das consultas SQL.
-* **Checagens de Sistema**: Espaço em disco do diretório de anexos (`/files`), consumo de CPU/Memória PHP-FPM, status do serviço cron do GLPi.
-* **Geração Automática de Tickets de Infraestrutura**: Em caso de falha física em equipamentos de suporte a facilidades (ex: sensores IoT de temperatura em Data Centers ou bombas d'água monitoradas), o Zabbix abrirá um chamado técnico diretamente no GLPi via API REST.
+* **Checagens de Aplicação**: Latência da API, disponibilidade da interface web e tempo de resposta das consultas SQL.
+* **Checagens de Sistema**: Espaço em disco do diretório de anexos (`/files`), consumo de CPU/Memória PHP-FPM e status de execução das tarefas agendadas (GLPi cron).
+* **Alertas de Sustentação**: Notificação automática das equipes de infraestrutura TI em caso de degradação de desempenho ou desconexão do banco de dados.
 
 ---
 
@@ -383,13 +405,13 @@ A prioridade de cada chamado é calculada automaticamente combinando a urgência
 
 ## 6.2 Tempos Alvo de SLA (Serviços Gerais)
 
-| Prioridade | Tempo de Primeira Resposta (TTR) | Tempo de Solução (TTO) | Exemplo de Incidente |
-|------------|-----------------------------------|------------------------|----------------------|
-| **5 — Muito Alta** | 15 minutos | 2 horas | Vazamento de água em sala de servidores / Data Center |
-| **4 — Alta** | 1 hora | 8 horas | Falha no sistema de portaria / Controle de Acesso |
-| **3 — Média** | 4 horas | 24 horas | Queda de ramal telefônico de setor administrativo |
-| **2 — Baixa** | 8 horas | 48 horas | Porta com fechadura emperrada em sala comum |
-| **1 — Muito Baixa** | 24 horas | 5 dias úteis | Pintura de ajuste em parede sem danos estruturais |
+Conforme a parametrização oficial do Catálogo de Serviços Gerais, o **Tempo de Primeira Resposta (TTR)** é padronizado em **2 horas** para todas as solicitações, variando o **Tempo de Solução (SLA / TTO)** conforme o nível de prioridade e a complexidade do serviço:
+
+| Nível de Prioridade | Tempo de Resposta (TTR) | Tempo de Solução (SLA / TTO) | Serviços Abrangidos (Exemplos) |
+|---------------------|-------------------------|------------------------------|--------------------------------|
+| **Prioridade 3 (Normal / Normal)** | 2 horas | 8 horas | Resíduos Sólidos, Limpeza-Higienização Predial, Almoxarifado, Elevador |
+| **Prioridade 4 (Normal / Baixo ou Muito Baixo)** | 2 horas | 2 dias | Acesso ao Parque, Autorização para Condução, Incidente no Estacionamento, Auditórios e Espaços Comuns, Cadastro/Agendamento de Veículo, Cadastro SISDAP, Paisagismo Interno, Serviço Não Classificado |
+| **Prioridade 5 (Baixa / Muito Baixo ou Baixo)** | 2 horas | 5 dias | Alvenaria, Chaveiro, Pintura, Ar Condicionado, Cabeamento Lógico, Marcenaria, Hidráulica, Rede de Telefonia, Rede Elétrica |
 
 ## 6.3 Indicadores Chave de Desempenho (KPIs)
 
@@ -458,7 +480,7 @@ Fase 4: Rollout Nacional — 40 UDs (Mês 7-9)
 
 Fase 5: Integrações Avançadas & Analytics (Mês 10-11)
   ├── Integração n8n (Notificações Teams/WhatsApp e Relatórios)
-  ├── Integração Zabbix para Monitoramento de Infraestrutura
+  ├── Monitoramento e Saúde de Infraestrutura do GLPi
   ├── Conexão KCS com BookStack Corporativo
   └── Publicação dos Dashboards Nacionais de KPI para Diretoria Executiva
 
