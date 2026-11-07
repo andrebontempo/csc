@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificação de Chamado - GLPI</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f1f5f9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; color: #334155;">
+
+    <!-- Container Principal da Mensagem -->
+    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f1f5f9; padding: 30px 10px;">
+        <tr>
+            <td align="center">
+                
+                <!-- Card Principal do E-mail -->
+                <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 640px; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04); border: 1px solid #e2e8f0;">
+                    
+                    <!-- Cabeçalho / Branding -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding: 32px 30px; text-align: center; border-bottom: 3px solid #254f7f;">
+                            <img src="https://raw.githubusercontent.com/glpi-project/glpi/main/public/pics/logos/logo-GLPI-250-white.png" alt="GLPI Logo" width="180" style="max-width: 180px; height: auto; display: block; margin: 0 auto 16px auto;">
+                            <h1 style="margin: 0; font-size: 22px; font-weight: 700; color: #ffffff; letter-spacing: -0.3px; line-height: 1.3;">
+                                Novo Chamado: <span style="color: #60a5fa;">##ticket.title##</span>
+                            </h1>
+                        </td>
+                    </tr>
+
+                    <!-- Mensagem Inicial & Ação Principal -->
+                    <tr>
+                        <td style="padding: 28px 30px 20px 30px; text-align: center; border-bottom: 1px solid #f1f5f9;">
+                            <p style="margin: 0 0 12px 0; font-size: 15px; color: #475569; line-height: 1.6;">
+                                Olá <strong>##IFticket.authors## ##ticket.authors## ##ENDIFticket.authors## ##ELSEticket.authors##Usuário##ENDELSEticket.authors##</strong>,
+                            </p>
+                            <p style="margin: 0 0 24px 0; font-size: 15px; color: #475569; line-height: 1.6;">
+                                Foi registrada uma nova atualização no seu chamado. Clique no botão abaixo para interagir ou acompanhar o andamento:
+                            </p>
+                            
+                            <!-- Botão Dinâmico (Aprovação / Visualização) -->
+                            ##IFticket.storestatus=5##
+                            <div style="margin: 20px 0;">
+                                <a href="##ticket.urlapprove##" style="display: inline-block; padding: 14px 32px; background-color: #16a34a; color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 15px; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(22, 163, 74, 0.25);">
+                                    ##lang.ticket.url## (Aprovar Solução)
+                                </a>
+                            </div>
+                            ##ENDIFticket.storestatus##
+                            ##ELSEticket.storestatus##
+                            <div style="margin: 20px 0;">
+                                <a href="##ticket.url##" style="display: inline-block; padding: 14px 32px; background-color: #254f7f; color: #ffffff; text-decoration: none; border-radius: 8px; font-size: 15px; font-weight: 600; box-shadow: 0 4px 6px -1px rgba(37, 79, 127, 0.25);">
+                                    Acessar Chamado
+                                </a>
+                            </div>
+                            ##ENDELSEticket.storestatus##
+                        </td>
+                    </tr>
+
+                    <!-- Alerta de Chamado Solucionado / Aguardando Fechamento (Se status = 5) -->
+                    ##IFticket.storestatus=5##
+                    <tr>
+                        <td style="padding: 0 30px 20px 30px;">
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 18px 20px;">
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 700; color: #15803d; font-size: 15px; margin-bottom: 8px;">
+                                            ✔ ##lang.ticket.autoclosewarning##
+                                        </div>
+                                        <div style="font-size: 13px; color: #166534; line-height: 1.5;">
+                                            <strong>##lang.ticket.solvedate##:</strong> ##ticket.solvedate##<br>
+                                            <strong>##lang.ticket.solution.type##:</strong> ##ticket.solution.type##<br>
+                                            <strong>##lang.ticket.solution.description##:</strong><br>
+                                            <div style="margin-top: 6px; padding: 10px; background-color: #ffffff; border-radius: 6px; border: 1px solid #dcfce7; color: #14532d;">
+                                                ##ticket.solution.description##
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    ##ENDIFticket.storestatus##
+
+                    <!-- Informações da Solução (Se status = 6 - Fechado) -->
+                    ##IFticket.storestatus=6##
+                    <tr>
+                        <td style="padding: 0 30px 20px 30px;">
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 18px 20px;">
+                                <tr>
+                                    <td>
+                                        <div style="font-weight: 700; color: #334155; font-size: 15px; margin-bottom: 8px;">
+                                            📋 Detalhes da Solução do Chamado
+                                        </div>
+                                        <div style="font-size: 13px; color: #475569; line-height: 1.5;">
+                                            <strong>##lang.ticket.solvedate##:</strong> ##ticket.solvedate##<br>
+                                            <strong>##lang.ticket.solution.type##:</strong> ##ticket.solution.type##<br>
+                                            <strong>##lang.ticket.solution.description##:</strong><br>
+                                            <div style="margin-top: 6px; padding: 10px; background-color: #ffffff; border-radius: 6px; border: 1px solid #cbd5e1;">
+                                                ##ticket.solution.description##
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    ##ENDIFticket.storestatus##
+
+                    <!-- Seção: Informações Gerais do Chamado -->
+                    <tr>
+                        <td style="padding: 24px 30px 10px 30px;">
+                            <div style="font-size: 14px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; border-left: 3px solid #254f7f; padding-left: 10px;">
+                                Detalhes do Chamado
+                            </div>
+                            
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 13px; line-height: 1.8;">
+                                <tr>
+                                    <td width="50%" valign="top" style="padding-right: 10px;">
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.title##:</span><br>
+                                            <strong style="color: #0f172a;">##ticket.title##</strong>
+                                        </p>
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.authors##:</span><br>
+                                            <strong style="color: #0f172a;">##IFticket.authors## ##ticket.authors## ##ENDIFticket.authors## ##ELSEticket.authors##--##ENDELSEticket.authors##</strong>
+                                        </p>
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.creationdate##:</span><br>
+                                            <strong style="color: #0f172a;">##ticket.creationdate##</strong>
+                                        </p>
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.closedate##:</span><br>
+                                            <strong style="color: #0f172a;">##ticket.closedate##</strong>
+                                        </p>
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.requesttype##:</span><br>
+                                            <strong style="color: #0f172a;">##ticket.requesttype##</strong>
+                                        </p>
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.category##:</span><br>
+                                            <strong style="color: #0f172a;">##IFticket.category## ##ticket.category## ##ENDIFticket.category## ##ELSEticket.category## ##lang.ticket.nocategoryassigned## ##ENDELSEticket.category##</strong>
+                                        </p>
+                                    </td>
+                                    <td width="50%" valign="top" style="padding-left: 10px;">
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.status##:</span><br>
+                                            <span style="display: inline-block; padding: 2px 10px; background-color: #e0f2fe; color: #0369a1; border-radius: 12px; font-weight: 700; font-size: 12px;">##ticket.status##</span>
+                                        </p>
+                                        ##IFticket.duedate##
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.duedate##:</span><br>
+                                            <strong style="color: #254f7f; font-size: 14px;">##ticket.duedate##</strong>
+                                        </p>
+                                        ##ENDIFticket.duedate##
+                                        ##ELSEticket.duedate##
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.duedate##:</span><br>
+                                            <strong style="color: #64748b;">A definir pelo atendimento</strong>
+                                        </p>
+                                        ##ENDELSEticket.duedate##
+                                        ##IFticket.assigntousers##
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.assigntousers##:</span><br>
+                                            <strong style="color: #0f172a;">##ticket.assigntousers##</strong>
+                                        </p>
+                                        ##ENDIFticket.assigntousers##
+                                        ##IFticket.assigntogroups##
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.assigntogroups##:</span><br>
+                                            <strong style="color: #0f172a;">##ticket.assigntogroups##</strong>
+                                        </p>
+                                        ##ENDIFticket.assigntogroups##
+                                        ##IFticket.user.email##
+                                        <p style="margin: 0 0 8px 0;">
+                                            <span style="color: #64748b; font-weight: 600;">##lang.ticket.user.email##:</span><br>
+                                            <strong style="color: #0f172a;">##ticket.user.email##</strong>
+                                        </p>
+                                        ##ENDIFticket.user.email##
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Seção: Itens Associados (Equipamentos/Ativos) -->
+                    <tr>
+                        <td style="padding: 10px 30px 20px 30px;">
+                            <div style="font-size: 14px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; border-left: 3px solid #254f7f; padding-left: 10px;">
+                                ##lang.ticket.item.name##
+                            </div>
+                            
+                            ##FOREACHitems##
+                            ##IFticket.itemtype##
+                            <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; font-size: 13px;">
+                                <strong style="color: #0f172a;">##ticket.itemtype## - ##ticket.item.name##</strong>
+                                ##IFticket.item.model##<br><span style="color: #64748b;">##lang.ticket.item.model##:</span> ##ticket.item.model####ENDIFticket.item.model##
+                                ##IFticket.item.serial## | <span style="color: #64748b;">##lang.ticket.item.serial##:</span> ##ticket.item.serial####ENDIFticket.item.serial##
+                                ##IFticket.item.otherserial## | <span style="color: #64748b;">##lang.ticket.item.otherserial##:</span> ##ticket.item.otherserial####ENDIFticket.item.otherserial##
+                            </div>
+                            ##ENDIFticket.itemtype##
+                            ##ENDFOREACHitems##
+                        </td>
+                    </tr>
+
+                    <!-- Seção: Descrição / Conteúdo do Chamado -->
+                    <tr>
+                        <td style="padding: 10px 30px 24px 30px;">
+                            <div style="font-size: 14px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; border-left: 3px solid #254f7f; padding-left: 10px;">
+                                ##lang.ticket.description##
+                            </div>
+                            <div style="background-color: #f8fafc; border-left: 4px solid #254f7f; border-top: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; border-radius: 0 8px 8px 0; padding: 16px 20px; font-size: 14px; color: #334155; line-height: 1.6;">
+                                <strong style="color: #64748b; font-size: 12px; display: block; margin-bottom: 6px;">##lang.ticket.content##:</strong>
+                                ##ticket.content##
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Seção: Linha do Tempo / Histórico de Acompanhamentos -->
+                    <tr>
+                        <td style="padding: 10px 30px 24px 30px; background-color: #fafafa; border-top: 1px solid #f1f5f9;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+                                <div style="font-size: 14px; font-weight: 700; color: #1e293b; text-transform: uppercase; letter-spacing: 0.5px; border-left: 3px solid #254f7f; padding-left: 10px;">
+                                    Histórico de Acompanhamentos
+                                </div>
+                            </div>
+
+                            <!-- Resumo dos Contadores -->
+                            <div style="margin-bottom: 14px; font-size: 12px; color: #64748b;">
+                                <span style="display: inline-block; background-color: #e2e8f0; color: #334155; padding: 3px 10px; border-radius: 12px; font-weight: 600; margin-right: 6px;">
+                                    ##lang.ticket.numberoffollowups##: ##ticket.numberoffollowups##
+                                </span>
+                                <span style="display: inline-block; background-color: #e2e8f0; color: #334155; padding: 3px 10px; border-radius: 12px; font-weight: 600;">
+                                    ##lang.ticket.numberoftasks##: ##ticket.numberoftasks##
+                                </span>
+                            </div>
+
+                            <!-- Loop dos itens da linha do tempo -->
+                            ##FOREACHtimelineitems##
+                            <div style="background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+                                <div style="font-size: 12px; color: #64748b; margin-bottom: 6px; border-bottom: 1px solid #f1f5f9; padding-bottom: 4px;">
+                                    📅 <strong>[##timelineitems.date##]</strong> | 
+                                    <span style="color: #254f7f; font-weight: 600;">##lang.timelineitems.author##: ##timelineitems.author##</span>
+                                </div>
+                                <div style="font-size: 13px; color: #334155; line-height: 1.5; margin-bottom: 6px;">
+                                    <strong>##lang.timelineitems.description##:</strong> ##timelineitems.description##
+                                </div>
+                                <div style="font-size: 11px; color: #94a3b8;">
+                                    <span>##lang.timelineitems.type##: ##timelineitems.type##</span> (##timelineitems.typename##) | 
+                                    <span>##lang.timelineitems.position##: ##timelineitems.position##</span>
+                                </div>
+                            </div>
+                            ##ENDFOREACHtimelineitems##
+                        </td>
+                    </tr>
+
+                    <!-- Rodapé do E-mail -->
+                    <tr>
+                        <td style="background-color: #f8fafc; padding: 24px 30px; text-align: center; border-top: 1px solid #e2e8f0; font-size: 12px; color: #94a3b8; line-height: 1.6;">
+                            <p style="margin: 0 0 6px 0;">
+                                Este é um e-mail automático gerado pelo sistema de atendimento <strong>GLPI</strong>. Por favor, não responda diretamente a esta mensagem.
+                            </p>
+                            <p style="margin: 0; font-size: 11px; color: #cbd5e1;">
+                                GLPI ITSM Platform &bull; Central de Serviços de TI
+                            </p>
+                        </td>
+                    </tr>
+
+                </table>
+                <!-- Fim do Card Principal -->
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
